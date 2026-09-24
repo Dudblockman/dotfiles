@@ -10,5 +10,5 @@ ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
 
 while IFS=$'\t' read -r repo skills; do
   [ -z "$repo" ] && continue
-  npx skills add "$repo" -g -y -s $skills
+  npx skills add "$repo" -g -y -s $skills < /dev/null
 done < "$DOTFILES/claude/skills.list"
